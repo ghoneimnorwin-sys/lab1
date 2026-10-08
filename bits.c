@@ -189,11 +189,11 @@ int negativePart(int x){
   int copyByteWithin(int x, int src, int dst) {
   int srcShift = src << 3;
   int dstShift = dst << 3;
-  int byte = (x >> srcShift) & 0xFF;
+  int selected = (x >> srcShift) & 0xFF;
   int mask = 0xFF << dstShift;
 
-  return (x & ~mask) | (byte << dstShift);
-};
+  return (x & ~mask) | (selected << dstShift);
+}
 
 
 // P5
